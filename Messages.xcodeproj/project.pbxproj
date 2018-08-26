@@ -12,6 +12,7 @@
 		3BCDC22821321B43008D0FFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCDC22621321B43008D0FFE /* Main.storyboard */; };
 		3BCDC22A21321B44008D0FFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BCDC22921321B44008D0FFE /* Assets.xcassets */; };
 		3BCDC22D21321B44008D0FFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCDC22B21321B44008D0FFE /* LaunchScreen.storyboard */; };
+		3BCDC23521321DB2008D0FFE /* MessageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCDC23421321DB2008D0FFE /* MessageTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3BCDC22921321B44008D0FFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BCDC22C21321B44008D0FFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BCDC22E21321B44008D0FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BCDC23421321DB2008D0FFE /* MessageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				3BCDC22221321B43008D0FFE /* AppDelegate.swift */,
 				3BCDC22421321B43008D0FFE /* ViewController.swift */,
 				3BCDC22621321B43008D0FFE /* Main.storyboard */,
+				3BCDC23421321DB2008D0FFE /* MessageTVCell.swift */,
 				3BCDC22921321B44008D0FFE /* Assets.xcassets */,
 				3BCDC22B21321B44008D0FFE /* LaunchScreen.storyboard */,
 				3BCDC22E21321B44008D0FFE /* Info.plist */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BCDC22521321B43008D0FFE /* ViewController.swift in Sources */,
+				3BCDC23521321DB2008D0FFE /* MessageTVCell.swift in Sources */,
 				3BCDC22321321B43008D0FFE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
