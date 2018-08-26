@@ -8,8 +8,10 @@
 
 import UIKit
 
-class MessageTVCell: UITableViewCell {
 
+
+class MessageTVCell: UITableViewCell {
+    
     @IBOutlet weak var avatarView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!

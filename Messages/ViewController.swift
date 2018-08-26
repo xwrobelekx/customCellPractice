@@ -51,8 +51,14 @@ import UIKit
  
  
  
-
- class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+ //#13 conform to protocol of the Toggle cell delegate
+ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ToggleTableViewCellDelegate {
+    //#8 create an enum to toggle between the cells
+    enum Section: Int {
+        case doNotDisturb
+        case messages
+    }
+    
 
     @IBOutlet weak var myTableView: UITableView!
     
@@ -64,14 +70,43 @@ import UIKit
         myTableView.dataSource = self
         messages = dummyMessages
     }
-    
-    
+    //#7 return 2 sections, bc were gone have 2 diferent cells
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        //#15 number of rows depends on sections so we need a switch ststement to switch between sections
+        //sections start at index 0, and ourcases have int raw values of 0, 1
+        switch Section(rawValue: section)! {
+        case .doNotDisturb: return 1
+            
+        case .messages: return messages.count
+            
+        }
+        
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //#9 using our enum we ned to use the raw value to switch on sections that can be accesed thru indexPath. section
+        switch Section(rawValue: indexPath.section)!{
+            //to get rid of the force unwraping, you would need to put a case of none at the end of the switch statement
+            //the raw value is optional
+        case .doNotDisturb:
+            //#11 create the second cell
+            let cell = myTableView.dequeueReusableCell(withIdentifier: "TogleCell", for: indexPath)
+            if let cell = cell as? ToggleTableViewCell {
+                //#12 set the delegate - the class need to confrom to ToggleTableViewDelegate protocol ^^
+                cell.delegate = self
+            }
+            return cell
+            
+     
+        //#10 the first cell logic goes under message, bc thats what this cell do
+        case .messages:
         let cell = myTableView.dequeueReusableCell(withIdentifier: "messageTVCell", for: indexPath)
         // get the message for specified row
         let message = messages[indexPath.row]
@@ -83,12 +118,15 @@ import UIKit
             cell.dataLabel.text = message.dateString
             cell.messageLabel.text = message.message
         }
-        
         return cell
-        
+        }
         
     }
     
+    //#14 by conforming to the protocole, you need to write the required function
+    func didToggle(isOn: Bool) {
+        print("Toggle status: \(isOn)")
+    }
 
 
 }
